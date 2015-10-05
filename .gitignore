@@ -17,3 +17,5 @@
 
 /vendor/bundle
 /public/assets
+
+/config/deploy
