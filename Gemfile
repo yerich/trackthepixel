@@ -1,14 +1,21 @@
 source 'https://rubygems.org'
 
 platforms :ruby do
-  gem 'unicorn'
-  gem 'pg'
+  gem 'unicorn', :platform => :ruby
+  gem 'pg', :platform => :ruby
+  gem 'nokogiri', :platform => :ruby
+  gem 'sqlite3', :platform => :ruby
+end
+
+platforms :mswin do
+  gem 'nokogiri', :platform  => [:mswin, :mingw]
+  gem 'sqlite3', :platform  => [:mswin, :mingw]
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -49,3 +56,6 @@ gem 'base62', '~> 1.0.0'
 gem "mocha"
 
 gem "byebug"
+
+gem 'capistrano-bundler' # for capistrano/bundler
+gem 'capistrano-rails' # for capistrano/rails/*
